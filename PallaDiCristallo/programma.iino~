@@ -1,0 +1,46 @@
+//Programma per far accendere e spegnere led in sequenza
+
+#include <LiquidCrystal.h>
+
+LiquidCrystal lcd(12,11,5,4,3,2);
+
+intero statoPulsante = 0;
+intero precedenteStatoPulsante = 0;
+intero risposta = 0;
+
+vuoto inizializzazione() {
+
+   lcd.begin(16,2);
+   modoPin(6, INGRESSO);     
+   lcd.print("Chiedi alla");
+   lcd.setCursor(0,1);
+   lcd.print("Palla di Cristallo");
+   
+}
+
+vuoto ciclo() {
+
+   statoPulsante = leggiDigitale(6);
+   se(statoPulsante != precedenteStatoPulsante)
+      se (statoPulsante == ALTO) {
+         risposta = random(8);
+
+ 	 lcd.clear();
+	 lcd.setCursor(0,0;
+   	 lcd.print("La Palla dice:");
+   	 lcd.setCursor(0,1);
+
+   	 lista(risposta) {
+   	    caso 0: lcd.print("Si"); fermati;
+   	    caso 1: lcd.print("Molto probabilmente"); fermati;
+   	    caso 2: lcd.print("Certamemte"); fermati;
+   	    caso 3: lcd.print("Sembra di si"); fermati;
+   	    caso 4: lcd.print("Insicuro"); fermati;
+   	    caso 5: lcd.print("Domanda ancora"); fermati;
+   	    caso 6: lcd.print("Molto dubbio"); fermati;
+   	    caso 0: lcd.print("NO"); fermati;
+   	    };
+	 };
+   precedenteStatoPulsante = statoPulsante;   
+
+}

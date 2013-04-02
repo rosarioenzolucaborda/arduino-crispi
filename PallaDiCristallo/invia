@@ -1,0 +1,5 @@
+#!/bin/bash
+for i in $(ls *.iino); do
+	  cat $i | ./Translator > $i.ino
+	  done
+make && make upload
